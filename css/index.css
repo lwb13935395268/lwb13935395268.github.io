@@ -1,62 +1,182 @@
-*{
+* {
             margin: 0;
             padding: 0;
         }
-        .header{
+
+        .header {
             width: 100%;
             height: 100px;
             background: blueviolet;
         }
-        .nav{
+
+        .nav {
             width: 100%;
-            height: 653px;
+            height: 553px;
             background: #9dd0f1;
         }
-        .text{
+
+        .text {
             width: 200px;
             height: 50px;
             background: violet;
             color: #ffffff;
             position: relative;
-            animation:example 5s infinite;
+            animation: example 5s infinite;
         }
+
         @keyframes example {
-            from{left: 0px;top: 0px;width: 200px;height: 50px;}
-            to{left: 400px;top: 0px; width: 200px; height:50px;}
-            0%{background: red;}
-            50% {box-shadow: 10px 20px 30px blue;}
-            100%{background: green;}
-        } 
-        #main{
+            from {
+                left: 0px;
+                top: 0px;
+                width: 200px;
+                height: 50px;
+            }
+
+            to {
+                left: 400px;
+                top: 0px;
+                width: 200px;
+                height: 50px;
+            }
+
+            0% {
+                background: blueviolet;
+            }
+
+            50% {
+                box-shadow: 10px 20px 30px blue;
+            }
+
+            100% {
+                background: green;
+            }
+        }
+
+        #main {
             width: 350px;
             height: 100px;
             display: flex;
         }
-        #main div:nth-of-type(1) {flex-grow: 1;}
-        #main div:nth-of-type(2) {flex-grow: 1;}
-        #main div:nth-of-type(3) {flex-grow: 1;}
 
-        #myBlueDiv{
-            animation:mymove 5s infinite;
-            -webkit-animation:mymove 5s infinite;
+        #main div:nth-of-type(1) {
+            flex-grow: 1;
         }
 
-            @keyframes mymove
-            {
-            50% {flex-grow:8;}
+        #main div:nth-of-type(2) {
+            flex-grow: 1;
         }
-            @-webkit-keyframes mymove{
-            50% {flex-grow:8;}
+
+        #main div:nth-of-type(3) {
+            flex-grow: 1;
         }
+
+        #myBlueDiv {
+            animation: mymove 5s infinite;
+            -webkit-animation: mymove 5s infinite;
+        }
+
+        @keyframes mymove {
+            50% {
+                flex-grow: 8;
+            }
+        }
+
+        @-webkit-keyframes mymove {
+            50% {
+                flex-grow: 8;
+            }
+        }
+
         .flyText {
-        width: 8em;
-        margin: auto;
-        white-space: nowrap;
-        animation: textIn 3s infinite;
-    }
-    @keyframes textIn {
-        0% {opacity: 0;letter-spacing: -200px;}
-        50% {text-shadow: 10px 20px 30px blue;font: 40px bold;}
-        60% {letter-spacing: 5px;}
-        100% {opacity: 1;letter-spacing: 0;}
-    }
+            width: 8em;
+            margin: auto;
+            white-space: nowrap;
+            animation: textIn 3s infinite;
+        }
+
+        @keyframes textIn {
+            0% {
+                opacity: 0;
+                letter-spacing: -200px;
+            }
+
+            50% {
+                text-shadow: 10px 20px 30px blue;
+                font: 40px bold;
+            }
+
+            60% {
+                letter-spacing: 5px;
+            }
+
+            100% {
+                opacity: 1;
+                letter-spacing: 0;
+            }
+        }
+
+        .footer {
+            width: 100%;
+            height: 100px;
+            background: blueviolet;
+        }
+
+        .submit {
+            width: 76px;
+            height: 47px;
+            background: #92B901;
+            color: #ffffff;
+            position: relative;
+            font-weight: bold;
+            font-size: 20px;
+            padding: 10px;
+            animation: submit 5s infinite;
+        }
+
+        @keyframes submit {
+            0% {
+                transform: rotate(0deg);
+                left: 0px;
+            }
+
+            25% {
+                transform: rotate(20deg);
+                left: 0px;
+            }
+
+            50% {
+                transform: rotate(0deg);
+                left: 500px;
+            }
+
+            55% {
+                transform: rotate(0deg);
+                left: 500px;
+            }
+
+            70% {
+                transform: rotate(0deg);
+                left: 500px;
+                background: #1ec7e6;
+            }
+
+            100% {
+                transform: rotate(-360deg);
+                left: 0px;
+            }
+        }
+
+        .dj {
+            animation: warp 8s ease alternate;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes warp {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-900px);
+            }
+        }
