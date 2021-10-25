@@ -21,7 +21,7 @@
         .top {
             width: 800px;
             height: 200px;
-            margin: 0 400px;
+            margin: 0 auto;
         }
 
         .t-center {
@@ -70,7 +70,7 @@
         .middle {
             width: 800px;
             height: 453px;
-            margin: 0 400px;
+            margin: 0 auto;
         }
 
         .n-center {
@@ -80,8 +80,33 @@
         }
 
         .h{
-            margin-top: 20px;
+            margin-top: 30px;
+            
         }
+
+        .change1 {
+            animation: move1 2s;
+        }
+
+        @keyframes move1 {
+            0% {
+                opacity: 0;
+                letter-spacing: -200px;
+            }
+
+            50% {
+                font: 40px bold;
+            }
+
+            60% {
+                letter-spacing: 5px;
+            }
+
+            100% {
+                opacity: 1;
+                letter-spacing: 0;
+            }
+        } 
 
         .texts {
             overflow: hidden;
@@ -89,7 +114,7 @@
             display: -webkit-box;
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
-            margin-top: 20px;
+            margin-top: 30px;
         }
 
         .n-right {

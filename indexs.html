@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+
+
+        .change1 {
+            animation: move1 2s;
+        }
+
+
+        @keyframes move1 {
+            to {
+                background: yellow;
+            }
+        }
+
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+
+
+        .change2 {
+            animation: move2 2s;
+        }
+
+
+        @keyframes move2 {
+            to {
+                background: yellow;
+            }
+        }
+
+
+        .box3 {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+
+
+        .change3 {
+            animation: move3 2s;
+        }
+
+
+        @keyframes move3 {
+            to {
+                background: yellow;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">hello world</div>
+    <div class="box2">hello world</div>
+    <div class="box3">hello world</div>
+</body>
+<script>
+    class Ani {
+        constructor(parse) {
+            this.parse = parse.targets;
+            this.num = parse.num;
+            this.newArr = this.parse.slice();
+            this.animation(this.newArr);
+        }
+        
+        animation(arr) {
+                if (!arr.length) {
+                    this.num--;
+                    this.newArr = this.parse.slice();
+                    if(this.num){
+                        this.animation(this.newArr);
+                    } else {
+                        return;
+                    }
+                } else {
+                    var arr1 = arr.shift();
+                    var tis = this;
+                    arr1.el.classList.add(arr1.animationClassName);
+                    const handleEventListener = function (e){
+                        arr1.el.classList.remove(arr1.animationClassName);
+                        tis.animation(arr);
+                        arr1.el.removeEventListener('animationend',handleEventListener);
+                    }
+                    arr1.el.addEventListener('animationend',handleEventListener);
+                }
+            }
+        }
+
+
+    var ani = new Ani({
+        targets: [
+            {
+                el: document.querySelector('.box1'),
+                animationClassName: 'change1'
+            },
+            {
+                el: document.querySelector('.box2'),
+                animationClassName: 'change1'
+            },
+            {
+                el: document.querySelector('.box3'),
+                animationClassName: 'change1'
+            }
+        ],
+        num:2
+    })
+</script>
+
+</html>
